@@ -13,8 +13,11 @@
 
 [EvFramework](./EvFramework.lnk)
 
+# Documentation
 
-## Documents
+[PDF](./evaluation_sheet.pdf)
+
+## Output Documents Can Be Found Here
 
 - [PDF](./output/pdf/)
 - [MD](./output/md/)
@@ -25,6 +28,9 @@
 Look in app menu choices
 
 ---
+
+## Author
+Kenneth Boldrini
 
 ## License
 
