@@ -9,6 +9,8 @@
 
 ---
 
+# 
+
 # Start
 
 [EvFramework](./EvFramework.lnk)
@@ -25,7 +27,8 @@
 
 ## Info 
 
-Look in app menu choices
+- Built for [Link](https://github.com/theMoor9/blockchain-potential-carnival). You can find here though the `README.md` in the `App` section the orginal purpose of this application.
+- Look in app menu choices.
 
 ---
 

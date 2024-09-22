@@ -277,7 +277,7 @@ pub mod output_manager {
         loop {    
             print_cntrd_txt(print_txt(AsciiFile::MainMenu)?.as_str());//Main Menu
             type_print_wrppd("\n\n\n\n\n\nWelcome to EvFramework!\n\n",TYPING_SPEED)?;
-            type_print_wrppd("This tool provides a focused and structured approach to evaluate Initial Coin Offerings \
+            type_print_wrppd("This tool provides a focused and structured approach to evaluate Token Assets \
                             across various dimensions,\n aiming to assist investors, analysts, and enthusiasts in \
                             making informed decisions.\n\n",
                             TYPING_SPEED-22600)?;
