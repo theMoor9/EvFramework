@@ -15,37 +15,37 @@ use lib::outputs::create_document;
 
 
 /* 
-ICO Evaluation Framework: Macro Areas and Questions Overview
+Asset Evaluation Framework: Macro Areas and Questions Overview
 
 1. Idea:
-   - Evaluates the novelty, necessity, and economic impact of the ICO's core concept.
+   - Evaluates the novelty, necessity, and economic impact of the Asset's core concept.
    - Questions include:
-     * What problem is the ICO trying to solve? Is it significant and meaningful?
+     * What problem is the Asset trying to solve? Is it significant and meaningful?
      * Does the market already exist for this product, or does it need to be created?
      * Is the problem being addressed something that is currently handled by a layer of unnecessary complexity or middlemen?
-     * What unique solution does the ICO propose? Is this solution a significant improvement on existing alternatives?
+     * What unique solution does the Asset propose? Is this solution a significant improvement on existing alternatives?
      * Is the idea scalable and capable of achieving wide adoption?
 
 2. Technology:
    - Assesses the technical feasibility, innovation, and scalability of the technology used.
    - Questions include:
-     * Is the technological solution proposed by the ICO feasible and currently available?
-     * Does the ICO's technology offer a substantial improvement over existing technology?
-     * How does the ICO handle data security and privacy concerns?
-     * Is the underlying technology behind the ICO robust and scalable?
-     * What are the potential technical challenges the ICO might face, and how does it plan to address them?
+     * Is the technological solution proposed by the Asset feasible and currently available?
+     * Does the Asset's technology offer a substantial improvement over existing technology?
+     * How does the Asset handle data security and privacy concerns?
+     * Is the underlying technology behind the Asset robust and scalable?
+     * What are the potential technical challenges the Asset might face, and how does it plan to address them?
 
 3. Blockchain Specifics:
    - Examines the choice of blockchain, token economics, and alignment with project needs.
    - Questions include:
      * What blockchain platform is being used, and why was it chosen?
-     * Is there a genuine need for blockchain technology in this ICO, or could the problem be solved using traditional technology?
-     * Does the ICO introduce a new token, and what is its utility within the ecosystem?
+     * Is there a genuine need for blockchain technology in this Asset, or could the problem be solved using traditional technology?
+     * Does the Asset introduce a new token, and what is its utility within the ecosystem?
      * How does the tokenomics structure impact the potential for long-term sustainability?
      * Are there any innovative blockchain features, such as smart contracts or decentralized applications, being utilized?
 
 4. Team:
-   - Reviews the experience, expertise, and reliability of the team behind the ICO.
+   - Reviews the experience, expertise, and reliability of the team behind the Asset.
    - Questions include:
      * What are the backgrounds and previous experiences of the team members?
      * Does the team have a proven track record in similar ventures or in the blockchain industry?
@@ -54,16 +54,16 @@ ICO Evaluation Framework: Macro Areas and Questions Overview
      * How does the team plan to grow, and what strategies are in place for scaling up?
 
 5. Execution:
-   - Considers the operational strategy, legal compliance, and financial planning of the ICO.
+   - Considers the operational strategy, legal compliance, and financial planning of the Asset.
    - Questions include:
-     * What is the roadmap for the ICO, and what milestones have already been achieved?
-     * How does the ICO plan to use the funds raised?
+     * What is the roadmap for the Asset, and what milestones have already been achieved?
+     * How does the Asset plan to use the funds raised?
      * Are there clear marketing and outreach strategies in place?
-     * How does the ICO plan to handle regulatory and legal issues?
-     * What are the risks associated with the ICO, and how does it plan to mitigate them?
+     * How does the Asset plan to handle regulatory and legal issues?
+     * What are the risks associated with the Asset, and how does it plan to mitigate them?
 
 6. Market Potential:
-   - Analyzes the market demand, competition, and growth potential of the ICO.
+   - Analyzes the market demand, competition, and growth potential of the Asset.
    - Questions include:
      * Is the idea scalable? What is a realistic share of the market?
      * Is there positive convexity to apply a similar idea in related applications?
@@ -101,24 +101,24 @@ fn main() {
     let mut assesment: Vec<Macro> = vec![
         Macro::new(
             "Idea".to_uppercase().to_string(), 
-            "Description: Evaluates the novelty, necessity, and economic impact of the ICO's core concept.".to_string(), 
+            "Description: Evaluates the novelty, necessity, and economic impact of the Asset's core concept.".to_string(), 
             vec![
-                Question::new("What problem is the ICO trying to solve? Is it significant and meaningful?".to_string()),
+                Question::new("What problem is the Asset trying to solve? Is it significant and meaningful?".to_string()),
                 Question::new("Does the market already exist for this product, or does it need to be created?".to_string()),
                 Question::new("Is the problem being addressed something that is currently handled by a layer of unnecessary complexity or middlemen?".to_string()),
-                Question::new("What unique solution does the ICO propose? Is this solution a significant improvement on existing alternatives?".to_string()),
-                Question::new("Is the underlying technology behind the ICO robust and scalable?".to_string()),
+                Question::new("What unique solution does the Asset propose? Is this solution a significant improvement on existing alternatives?".to_string()),
+                Question::new("Is the underlying technology behind the Asset robust and scalable?".to_string()),
             ]
         ),
         Macro::new(
             "Technology".to_uppercase().to_string(),
             "Description: Assesses the technical feasibility, innovation, and scalability of the technology used.".to_string(),
             vec![
-                Question::new("Is the technological solution proposed by the ICO feasible and currently available?".to_string()),
-                Question::new("Does the ICO's technology offer a substantial improvement over existing technology?".to_string()),
-                Question::new("How does the ICO handle data security and privacy concerns?".to_string()),
-                Question::new("Is the underlying technology behind the ICO robust and scalable?".to_string()),
-                Question::new("What are the potential technical challenges the ICO might face, and how does it plan to address them?".to_string()),
+                Question::new("Is the technological solution proposed by the Asset feasible and currently available?".to_string()),
+                Question::new("Does the Asset's technology offer a substantial improvement over existing technology?".to_string()),
+                Question::new("How does the Asset handle data security and privacy concerns?".to_string()),
+                Question::new("Is the underlying technology behind the Asset robust and scalable?".to_string()),
+                Question::new("What are the potential technical challenges the Asset might face, and how does it plan to address them?".to_string()),
             ]
         ),
         Macro::new(
@@ -126,15 +126,15 @@ fn main() {
             "Description: Examines the choice of blockchain, token economics, and alignment with project needs.".to_string(),
             vec![
                 Question::new("What blockchain platform is being used, and why was it chosen?".to_string()),
-                Question::new("Is there a genuine need for blockchain technology in this ICO, or could the problem be solved using traditional technology?".to_string()),
-                Question::new("Does the ICO introduce a new token, and what is its utility within the ecosystem?".to_string()),
+                Question::new("Is there a genuine need for blockchain technology in this Asset, or could the problem be solved using traditional technology?".to_string()),
+                Question::new("Does the Asset introduce a new token, and what is its utility within the ecosystem?".to_string()),
                 Question::new("How does the tokenomics structure impact the potential for long-term sustainability?".to_string()),
                 Question::new("Are there any innovative blockchain features, such as smart contracts or decentralized applications, being utilized?".to_string()),
             ]
         ),
         Macro::new(
             "Team".to_uppercase().to_string(),
-            "Description: Reviews the experience, expertise, and reliability of the team behind the ICO.".to_string(),
+            "Description: Reviews the experience, expertise, and reliability of the team behind the Asset.".to_string(),
             vec![
                 Question::new("What are the backgrounds and previous experiences of the team members?".to_string()),
                 Question::new("Does the team have a proven track record in similar ventures or in the blockchain industry?".to_string()),
@@ -145,18 +145,18 @@ fn main() {
         ),
         Macro::new(
             "Execution".to_uppercase().to_string(),
-            "Description: Considers the operational strategy, legal compliance, and financial planning of the ICO.".to_string(),
+            "Description: Considers the operational strategy, legal compliance, and financial planning of the Asset.".to_string(),
             vec![
-                Question::new("What is the roadmap for the ICO, and what milestones have already been achieved?".to_string()),
-                Question::new("How does the ICO plan to use the funds raised?".to_string()),
+                Question::new("What is the roadmap for the Asset, and what milestones have already been achieved?".to_string()),
+                Question::new("How does the Asset plan to use the funds raised?".to_string()),
                 Question::new("Are there clear marketing and outreach strategies in place?".to_string()),
-                Question::new("How does the ICO plan to handle regulatory and legal issues?".to_string()),
-                Question::new("What are the risks associated with the ICO, and how does it plan to mitigate them?".to_string()),
+                Question::new("How does the Asset plan to handle regulatory and legal issues?".to_string()),
+                Question::new("What are the risks associated with the Asset, and how does it plan to mitigate them?".to_string()),
             ]
         ),
         Macro::new(
             "Market Potential".to_uppercase().to_string(),
-            "Description: Analyzes the market demand, competition, and growth potential of the ICO.".to_string(),
+            "Description: Analyzes the market demand, competition, and growth potential of the Asset.".to_string(),
             vec![
                 Question::new("Is the idea scalable? What is a realistic share of the market?".to_string()),
                 Question::new("Is there positive convexity to apply a similar idea in related applications?".to_string()),
@@ -185,10 +185,10 @@ fn main() {
             }
             match output_manager::ask_document() {
                 None => (),
-                Some(ico) => {
+                Some(asset) => {
                     
                     create_document::start(
-                        ico, 
+                        asset, 
                         score_math::weighted_summation(&assesment),
                         score_math::to_normalize(
                             score_math::weighted_summation(&assesment)

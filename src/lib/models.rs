@@ -29,7 +29,7 @@ pub struct Macro {
     pub weight: Option<ValidMultiplier>,
     pub questions: Vec<Question>,
 }
-pub struct IcoEvaluation {
+pub struct AssetEvaluation {
     pub name: String,
     pub total_score: i16,
     pub investment_suitability_value: u8,
@@ -57,10 +57,10 @@ impl Question {
 }
 
 
-impl IcoEvaluation {
-    pub fn new(ico_name:String, score: i16, isv: u8, questionnaire: Vec<Macro>) -> IcoEvaluation {
-        IcoEvaluation {
-            name: ico_name,
+impl AssetEvaluation {
+    pub fn new(asset_name:String, score: i16, isv: u8, questionnaire: Vec<Macro>) -> AssetEvaluation {
+        AssetEvaluation {
+            name: asset_name,
             total_score: score,
             investment_suitability_value: isv,
             macros: questionnaire,

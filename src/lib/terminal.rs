@@ -317,23 +317,23 @@ pub mod output_manager {
         print_cntrd_txt(print_txt(AsciiFile::System)?.as_str());//System
         type_print_wrppd(
             "\n\nThe evaluation of the questionnaire is based on a series of ratings ranging from -5 to +5, where:\n\n\
-            [-5] indicates that an aspect of the ICO is extremely inadequate, suggesting significant concerns or risks.\n\
+            [-5] indicates that an aspect of the Asset is extremely inadequate, suggesting significant concerns or risks.\n\
             [ 0] represents a neutral stance, indicating that the aspect meets basic expectations without significant strengths or weaknesses.\n\
-            [+5] signifies that an aspect is excellent, demonstrating outstanding qualities or advantages that significantly enhance the ICO's appeal.\n\n\n",
+            [+5] signifies that an aspect is excellent, demonstrating outstanding qualities or advantages that significantly enhance the Asset's appeal.\n\n\n",
             TYPING_SPEED-22600,
         )?;
         print_cntrd_txt(print_txt(AsciiFile::MacroAreas)?.as_str());//Macro Areas
-        type_print_wrppd("\n\nThe system categorizes ICO characteristics into six major areas, each containing specific elements to be evaluated:\n\n\
-            1. Idea: Evaluates the novelty, necessity, and economic impact of the ICO's core concept.\n\
+        type_print_wrppd("\n\nThe system categorizes Asset characteristics into six major areas, each containing specific elements to be evaluated:\n\n\
+            1. Idea: Evaluates the novelty, necessity, and economic impact of the Asset's core concept.\n\
             2. Technology: Assesses the technical feasibility, innovation, and scalability of the technology used.\n\
             3. Blockchain Specifics: Examines the choice of blockchain, token economics, and alignment with project needs.\n\
-            4. Team: Reviews the experience, expertise, and reliability of the team behind the ICO.\n\
-            5. Execution: Considers the operational strategy, legal compliance, and financial planning of the ICO.\n\
-            6. Market Potential: Analyzes the market demand, competition, and growth potential of the ICO.",
+            4. Team: Reviews the experience, expertise, and reliability of the team behind the Asset.\n\
+            5. Execution: Considers the operational strategy, legal compliance, and financial planning of the Asset.\n\
+            6. Market Potential: Analyzes the market demand, competition, and growth potential of the Asset.",
             TYPING_SPEED-22600,
         )?;
         type_print_wrppd(
-            "\nEach macro area carries a different weight, reflecting its relative importance in the overall evaluation of an ICO. \
+            "\nEach macro area carries a different weight, reflecting its relative importance in the overall evaluation of an Asset. \
             Users can assign multipliers to each macro area based on their individual assessment priorities, with values ranging from 1 to 3:\n\n\
             - A multiplier of 1 suggests standard importance.\n\
             - A multiplier of 2 indicates increased importance.\n\
@@ -369,17 +369,17 @@ pub mod output_manager {
             - Quantifies the Decision: It transforms subjective impressions and qualitative \
             assessments into an objective number that can be easily compared and analyzed.\n\
             - Guides Investors: It provides a clear foundation upon which investors can base \
-            their decisions, especially in a complex field like cryptocurrencies and ICOs, where \
+            their decisions, especially in a complex field like cryptocurrencies and Assets, where \
             the amount of information can be overwhelming.\n\
             - Standardizes Evaluations: It creates a standardized method for assessing \
-            different ICOs, making it easier for investors to compare various investment \
+            different Assets, making it easier for investors to compare various investment \
             opportunities based on consistent metrics.\n\n",
             TYPING_SPEED-22600,
         )?;
 
         type_print_wrppd("\n\n\
             Therefore, this type of scoring system not only helps simplify the decision-making process but \
-            also contributes to reducing uncertainty and providing greater clarity, making the ICO investment \
+            also contributes to reducing uncertainty and providing greater clarity, making the Asset investment \
             evaluation process more transparent.",
                         TYPING_SPEED,)?;
 
@@ -408,12 +408,12 @@ pub mod output_manager {
             println!();
             match get_user_input().ok()?.to_uppercase().as_str() {
                 "YES" => {
-                    // Name of the ICO
+                    // Name of the Asset
                     type_print_wrppd("\nPlease enter target cryptocurrency name:",TYPING_SPEED).ok()?;
 
-                    let ico_name = get_user_input().ok()?.to_owned();
+                    let asset_name = get_user_input().ok()?.to_owned();
 
-                    return Some(ico_name)
+                    return Some(asset_name)
                 },
                 "NO" => return None,
                 _ => {

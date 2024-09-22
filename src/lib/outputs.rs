@@ -14,10 +14,10 @@ use crate::terminal::output_manager;
 pub mod create_document {
     use super::*;
 
-    pub fn start(ico_name: String, score: i16, isv: u8, updated_assessment: Vec<Macro>){
+    pub fn start(asset_name: String, score: i16, isv: u8, updated_assessment: Vec<Macro>){
 
-        let new_ico_assessment = IcoEvaluation::new(
-            ico_name, 
+        let new_asset_assessment = AssetEvaluation::new(
+            asset_name, 
             score,
             isv,
             updated_assessment
@@ -26,7 +26,7 @@ pub mod create_document {
         let md_file_path =  Path::new("../../output/md/buffer.md");
         let pdf_file_path =  Path::new("../../output/pdf/EvFrameworkReport.pdf");
 
-        match create_md(&new_ico_assessment, md_file_path.to_str().unwrap()){
+        match create_md(&new_asset_assessment, md_file_path.to_str().unwrap()){
             Ok(_) => (),
             Err(e) => {
                 eprintln!("Error: {}", e);
@@ -34,7 +34,7 @@ pub mod create_document {
             }
         };
 
-        match create_pdf(new_ico_assessment, pdf_file_path.to_str().unwrap()){
+        match create_pdf(new_asset_assessment, pdf_file_path.to_str().unwrap()){
             Ok(_) => (),
             Err(e) => {
                 eprintln!("Error: {}", e);
@@ -44,25 +44,25 @@ pub mod create_document {
 
     }
 
-    fn create_md(ico: &IcoEvaluation, file_path: &str) -> io::Result<()> {
+    fn create_md(asset: &AssetEvaluation, file_path: &str) -> io::Result<()> {
         // Create a buffer to write the data
         remove_file(file_path)?;
         let mut buffer = File::create(file_path)?;
 
-        // ICO's info
+        // Asset's info
         writeln!(buffer, "#EvFramework Report")?;
         writeln!(buffer)?;
-        writeln!(buffer, "##**{}**", ico.name)?;
+        writeln!(buffer, "##**{}**", asset.name)?;
         writeln!(
             buffer,
             "##**Investment Suitability Value**:   {}", 
-            ico.investment_suitability_value
+            asset.investment_suitability_value
         )?;
-        writeln!(buffer, "**Total Score**: {}", ico.total_score)?;
+        writeln!(buffer, "**Total Score**: {}", asset.total_score)?;
         writeln!(buffer, "---")?;
 
         // Macro Areas and Question
-        for macro_item in &ico.macros {
+        for macro_item in &asset.macros {
             if let Some(ref name) = macro_item.name {
                 writeln!(buffer, "**{}**", name)?;// Macro name
             }
@@ -108,9 +108,9 @@ pub mod create_document {
         Ok(())
 
     }
-    fn create_pdf(ico: IcoEvaluation, file_path: &str) -> io::Result<()> {
+    fn create_pdf(asset: AssetEvaluation, file_path: &str) -> io::Result<()> {
             // Create a new PDF document
-            let (doc, page1, layer1) = PdfDocument::new(&ico.name, Mm(210.0), Mm(297.0), "Layer 1");
+            let (doc, page1, layer1) = PdfDocument::new(&asset.name, Mm(210.0), Mm(297.0), "Layer 1");
             let mut current_layer = doc.get_page(page1).get_layer(layer1);
             // Start position for the content
             let mut y_position = 287.0;
@@ -154,16 +154,16 @@ pub mod create_document {
             let _ = draw_text_wrapped(&current_layer, "EvFramework Report", 36.0, 55.0, &mut y_position, &title_font);
             y_position -= 12.0;
 
-            // Title: ICO Name
-            let _ = draw_text_wrapped(&current_layer, &ico.name, 24.0, 10.0, &mut y_position, &bold_font);
+            // Title: Asset Name
+            let _ = draw_text_wrapped(&current_layer, &asset.name, 24.0, 10.0, &mut y_position, &bold_font);
         
             // Investment Suitability Value and Total Score
-            let _ = draw_text_wrapped(&current_layer, format!("Investment Suitability Value: {}%", ico.investment_suitability_value).as_str(), 12.0, 10.0, &mut y_position, &bold_font);
-            let _ = draw_text_wrapped(&current_layer, format!("Total Score: {}", ico.total_score).as_str(), 12.0, 10.0, &mut y_position, &oblique_font);
+            let _ = draw_text_wrapped(&current_layer, format!("Investment Suitability Value: {}%", asset.investment_suitability_value).as_str(), 12.0, 10.0, &mut y_position, &bold_font);
+            let _ = draw_text_wrapped(&current_layer, format!("Total Score: {}", asset.total_score).as_str(), 12.0, 10.0, &mut y_position, &oblique_font);
             y_position -= 22.0;
         
             // Add each Macro Area
-            for macro_item in &ico.macros {
+            for macro_item in &asset.macros {
 
                 let _ = check_page_break(&doc, &mut current_layer, &mut y_position);
 
